@@ -3,58 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Caylin Naidoo – Senior Software Engineer</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Ash Naidoo – Senior Software Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+    }
+    header {
+      background: #004d99;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #004d99;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #aaa;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="assets/img.png" alt="Ash Naidoo">
-    <h1>Caylin John Naidoo</h1>
-    <p>Senior Software Engineer | AWS Certified</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="about">
+<header data-aos="fade-down">
+  <img src="assets/img.png" alt="Ash Naidoo">
+  <h1>Ash Naidoo</h1>
+  <p>Senior Software Engineer | Fintech Expert | AWS Certified</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>
-      I'm a passionate software engineer with 10+ years of experience building scalable systems in the fintech sector. I specialize in Java, Spring Boot, AWS cloud architecture, and DevOps practices. I've led key initiatives at major banks and introduced process improvements that saved time and reduced errors.
+      I'm a passionate software engineer with over a decade of experience building scalable, secure financial platforms.
+      My focus is cloud-native systems, API design, and AWS-first architectures.
+      I've worked across leading banks and fintechs, introducing practices that improve speed, traceability, and developer quality of life.
     </p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up" data-aos-delay="100">
     <h2>Technical Skills</h2>
     <ul>
-      <li>Java, Spring Boot, Hibernate</li>
-      <li>AWS (Lambda, RDS, S3, Terraform)</li>
-      <li>Microservices Architecture</li>
-      <li>CI/CD (Jenkins, GitHub Actions)</li>
-      <li>PostgreSQL, Kafka, Redis</li>
-      <li>Leadership & Mentoring</li>
+      <li>Java 17, Spring Boot, Spring Cloud, Hibernate</li>
+      <li>AWS (Lambda, RDS, S3, CloudWatch, Secrets Manager)</li>
+      <li>Infrastructure as Code: Terraform</li>
+      <li>Event-driven Systems: Kafka, SNS/SQS</li>
+      <li>CI/CD: Jenkins, GitHub Actions</li>
+      <li>Camunda BPM, SonarQube, Elastic APM</li>
+      <li>Agile, Mentoring, Solution Design</li>
     </ul>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up" data-aos-delay="200">
     <h2>Featured Projects</h2>
     <ul>
-      <li><a href="projects/project1.html">Real-Time Payment Engine</a></li>
-      <li><a href="projects/project2.html">Cloud-Native Data Lake</a></li>
+      <li><a href="projects/project1.html">Real-Time Commercial Payment Engine</a></li>
+      <!-- Add more projects here -->
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up" data-aos-delay="300">
     <h2>Contact</h2>
-    <p>Email: caylinj@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/test">github.com/test</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/test">linkedin.com/in/test</a></p>
+    <p>Email: ash.naidoo@example.com</p>
+    <p>GitHub: <a href="https://github.com/ashnaidoo" target="_blank">github.com/ashnaidoo</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/ashnaidoo" target="_blank">linkedin.com/in/ashnaidoo</a></p>
   </section>
+</div>
 
-  <footer>
-    <p>© 2025 Caylin John Naidoo</p>
-  </footer>
+<footer>
+  <p>© 2025 Ash Naidoo</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 700,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
 </body>
 </html>
