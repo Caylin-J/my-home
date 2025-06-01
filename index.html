@@ -6,6 +6,7 @@
   <title>Ash Naidoo – Senior Software Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script async defer data-domain="ashnaidoo.github.io" src="https://plausible.io/js/script.js"></script>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -58,6 +59,27 @@
       list-style: disc;
       padding-left: 1.5rem;
     }
+    form {
+      max-width: 500px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #004d99;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0066cc;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -70,7 +92,7 @@
 <body>
 
 <header data-aos="fade-down">
-  <img src="assets/img.png" alt="Ash Naidoo">
+  <img src="assets/headshot.jpg" alt="Ash Naidoo">
   <h1>Ash Naidoo</h1>
   <p>Senior Software Engineer | Fintech Expert | AWS Certified</p>
   <nav>
@@ -108,15 +130,23 @@
     <h2>Featured Projects</h2>
     <ul>
       <li><a href="projects/project1.html">Real-Time Commercial Payment Engine</a></li>
-      <!-- Add more projects here -->
     </ul>
   </section>
 
   <section id="contact" data-aos="fade-up" data-aos-delay="300">
     <h2>Contact</h2>
-    <p>Email: ash.naidoo@example.com</p>
-    <p>GitHub: <a href="https://github.com/ashnaidoo" target="_blank">github.com/ashnaidoo</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/ashnaidoo" target="_blank">linkedin.com/in/ashnaidoo</a></p>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <label for="name">Name:</label><br />
+      <input type="text" name="name" required><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" name="email" required><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 </div>
 
