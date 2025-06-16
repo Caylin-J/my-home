@@ -131,22 +131,15 @@
 
             /* Horizontal tech scroller */
             .tech-scroller {
-			  overflow-x: hidden;
-			  overflow-y: visible;
 			  position: center;
-			  width: 60%;
-			  height: 15%;
-			  padding: 1rem 1rem;
+			  width: 50%;
 			}
 
             .tech-track {
-            	overflow-x: hidden;
-			  	overflow-y: visible;
                 display: flex;
                 align-items: center;
                 animation: scroll 30s linear infinite;
                 width: max-content;
-                height: 100%
             }
             @keyframes scroll {
                 0% { transform: translateX(0); }
@@ -164,15 +157,20 @@
             }
 
 			#sep {
-				height: 30%
+				height: 80%
 			}
 
 			body.is-article-visible .tech-scroller {
 			  display: none !important;
 			}
 
-			#map {
-				width: 10%;
+<!--			body.is-article-visible #map-widget {-->
+<!--			  display: none;-->
+<!--			}-->
+
+			#map-widget {
+				position: center;
+				width: 100%;
 			}
 
 		</style>
@@ -241,7 +239,69 @@
 
 						<!-- Contact -->
 							<article id="contact">
-								<h2 class="major">Contact</h2>
+								<div id="map-widget">
+									<div>
+										<meta charset="UTF-8" />
+										<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+										<title>Leaflet Distance Map</title>
+
+										<!-- Leaflet CSS -->
+										<link
+												rel="stylesheet"
+												href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+										/>
+
+										<style>
+											#map {
+                                              height: 400px;
+                                              width:  90%;
+                                              margin: 2rem 2rem;
+                                              border-radius: 12px;
+                                              align-items: center;
+                                            }
+										</style>
+									</div>
+									<h2 class="major">Contact</h2>
+									<h3 style="text-align: center;">How far are you from me?</h3>
+									<div id="map"></div>
+
+									<!-- Leaflet JS -->
+									<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+									<script>
+										const yourCoords = [-25.999, 28.126]; // Midrand, ZA
+
+                                        const map = L.map('map').setView(yourCoords, 2);
+
+                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                          attribution: '© OpenStreetMap contributors'
+                                        }).addTo(map);
+
+                                        L.marker(yourCoords).addTo(map).bindPopup('My Location').openPopup();
+
+                                        if (navigator.geolocation) {
+                                          navigator.geolocation.getCurrentPosition(
+                                            (position) => {
+                                              const userCoords = [
+                                                position.coords.latitude,
+                                                position.coords.longitude
+                                              ];
+
+                                              L.marker(userCoords).addTo(map).bindPopup('You are here');
+
+                                              L.polyline([yourCoords, userCoords], { color: 'red' }).addTo(map);
+
+                                              map.fitBounds([yourCoords, userCoords], { padding: [40, 40] });
+                                            },
+                                            (err) => {
+                                              alert('Geolocation failed or blocked: ' + err.message);
+                                            }
+                                          );
+                                        } else {
+                                          alert('Your browser does not support geolocation.');
+                                        }
+									</script>
+								</div>
 								<form method="post" action="https://formspree.io/f/xnnvakeb">
 									<div class="fields">
 										<div class="field half">
@@ -266,6 +326,8 @@
 									<li><a href="https://za.linkedin.com/in/caylin-john-naidoo" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<li><a href="https://github.com/Caylin-J" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
+
+
 							</article>
 
 						<!-- Elements -->
@@ -511,69 +573,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 
 					</div>
-
-				<head>
-					<meta charset="UTF-8" />
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<title>Leaflet Distance Map</title>
-
-					<!-- Leaflet CSS -->
-					<link
-							rel="stylesheet"
-							href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-					/>
-
-					<style>
-						#map {
-                          height: 400px;
-                          width: 400px;
-                          margin: 2rem 2rem;
-                          border-radius: 12px;
-                        }
-					</style>
-				</head>
-
-				<h3 style="text-align: center;">How far are you from me?</h3>
-				<div id="map"></div>
-
-				<!-- Leaflet JS -->
-				<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-				<script>
-					const yourCoords = [-25.999, 28.126]; // Midrand, ZA
-
-                    const map = L.map('map').setView(yourCoords, 2);
-
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                      attribution: '© OpenStreetMap contributors'
-                    }).addTo(map);
-
-                    L.marker(yourCoords).addTo(map).bindPopup('My Location').openPopup();
-
-                    if (navigator.geolocation) {
-                      navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                          const userCoords = [
-                            position.coords.latitude,
-                            position.coords.longitude
-                          ];
-
-                          L.marker(userCoords).addTo(map).bindPopup('You are here');
-
-                          L.polyline([yourCoords, userCoords], { color: 'red' }).addTo(map);
-
-                          map.fitBounds([yourCoords, userCoords], { padding: [40, 40] });
-                        },
-                        (err) => {
-                          alert('Geolocation failed or blocked: ' + err.message);
-                        }
-                      );
-                    } else {
-                      alert('Your browser does not support geolocation.');
-                    }
-				</script>
-
-
 
 
 				<div class="tech-scroller">
