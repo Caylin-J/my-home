@@ -29,10 +29,12 @@
 				margin: 0;
 				display: flex;
 				flex-direction: column;
+				overflow-x: hidden;
+				overflow-y: visible;
 			}
 
 			#wrapper {
-				flex: 1;
+				flex: 1 0 auto;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -42,13 +44,14 @@
 				padding-right: 1rem;
 				box-sizing: border-box;
 				width: 100%;
-				overflow-x: hidden;
+				overflow-x: visible;
 			}
 
 			#main {
 				width: 100%;
 				flex: 1;
-				overflow-y: always;
+				flex-grow: 1;
+				overflow-y: visible;
 				padding-bottom: 4rem; /* ⬅️ Increased from 2rem to give tooltips more room */
 				box-sizing: border-box;
 			}
@@ -131,18 +134,28 @@
 
             /* Horizontal tech scroller */
             .tech-scroller {
-			  position: center;
-			  width: 50%;
-			  height: 20%;
-			  overflow: hidden;
+            	font-family: Roboto;
+            	font-size: 0.1rem;
+				position: relative;
+				width: 70%;           /* limit visible scroll width */
+				overflow-x: hidden;   /* ⬅️ clip horizontally */
+				overflow-y: hidden;  /* ⬅️ allow vertical escape */
+				margin: 2rem auto 4rem auto;  /* ⬅️ Add spacing above & below */
+				padding: 5rem 0;              /* ⬅️ Prevent clipping from icons/tooltips */
 			}
 
             .tech-track {
-                display: flex;
-                align-items: center;
-                animation: scroll 30s linear infinite;
-                width: max-content;
-            }
+				display: flex;
+				align-items: center;
+				animation: scroll 30s linear infinite;
+				width: max-content;
+				overflow: visible;
+			}
+
+			.tooltip {
+				position: relative;
+				z-index: 10;
+			}
             @keyframes scroll {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(-50%); }
@@ -174,6 +187,18 @@
 				position: center;
 				width: 100%;
 			}
+
+			@media (max-width: 768px) {
+				.tooltip .tooltiptext {
+					transform: translateX(-50%) translateY(8px);
+					font-size: 0.75rem;
+					white-space: normal; /* allow line break */
+					width: max-content;
+					max-width: 120px;
+					text-align: center;
+				}
+			}
+
 
 		</style>
 
