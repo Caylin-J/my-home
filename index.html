@@ -169,6 +169,10 @@
 			  display: none !important;
 			}
 
+			#map {
+				width: 10%;
+			}
+
 		</style>
 
 	</head>
@@ -505,6 +509,71 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 
 					</div>
+
+				<head>
+					<meta charset="UTF-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<title>Leaflet Distance Map</title>
+
+					<!-- Leaflet CSS -->
+					<link
+							rel="stylesheet"
+							href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+					/>
+
+					<style>
+						#map {
+                          height: 100%;
+                          width: 30%;
+                          margin: 2rem auto;
+                          border-radius: 12px;
+                        }
+					</style>
+				</head>
+
+				<h3 style="text-align: center;">How far are you from me?</h3>
+				<div id="map"></div>
+
+				<!-- Leaflet JS -->
+				<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+				<script>
+					const yourCoords = [-25.999, 28.126]; // Midrand, ZA
+
+                    const map = L.map('map').setView(yourCoords, 2);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+
+                    L.marker(yourCoords).addTo(map).bindPopup('My Location').openPopup();
+
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                          const userCoords = [
+                            position.coords.latitude,
+                            position.coords.longitude
+                          ];
+
+                          L.marker(userCoords).addTo(map).bindPopup('You are here');
+
+                          L.polyline([yourCoords, userCoords], { color: 'red' }).addTo(map);
+
+                          map.fitBounds([yourCoords, userCoords], { padding: [40, 40] });
+                        },
+                        (err) => {
+                          alert('Geolocation failed or blocked: ' + err.message);
+                        }
+                      );
+                    } else {
+                      alert('Your browser does not support geolocation.');
+                    }
+				</script>
+
+
+
+
 				<div class="tech-scroller">
 					<div class="tech-track">
 						<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
