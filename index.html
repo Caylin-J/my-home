@@ -42,17 +42,22 @@
 				padding-right: 1rem;
 				box-sizing: border-box;
 				width: 100%;
-				overflow: hidden; /* Remove this if footer still cuts off */
+				overflow-x: hidden;
 			}
 
 			#main {
 				width: 100%;
 				flex: 1;
-				overflow-y: auto;
-				padding-bottom: 2rem;
+				overflow-y: always;
+				padding-bottom: 4rem; /* ⬅️ Increased from 2rem to give tooltips more room */
 				box-sizing: border-box;
 			}
 
+			#footer {
+			  position: relative;
+			  z-index: 1;
+			  padding-bottom: 2rem;
+			}
 
             /* Background image behind everything */
             #bg {
@@ -76,18 +81,6 @@
                 font-family: Roboto;
             }
 
-            /* Footer sticks to bottom */
-            #footer {
-                text-align: center;
-                padding: 1rem 0;
-                width: 100%;
-                flex-shrink: 0;
-                background-color: rgba(0, 0, 0, 0.3);
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                z-index: 2;
-                position: relative;
-            }
-
             /* SCROLLER TOOLTIP STYLES */
             .tooltip {
                 position: relative;
@@ -103,28 +96,25 @@
                 z-index: 1;
             }
             .tooltip .tooltiptext {
-                visibility: hidden;
-                opacity: 0;
-                position: absolute;
-                bottom: 100%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50px);
-                background-color: rgba(0, 0, 0, 0.9);
-                color: white;
-                text-align: center;
-                border-radius: 6px;
-                padding: 6px 10px;
-                font-size: 0.8rem;
-                white-space: nowrap;
-                z-index: 2;
-                pointer-events: none;
-                transition: opacity 0.3s ease;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            }
+			  visibility: visible;
+			  opacity: 1;
+			  position: absolute;
+			  top: 100%;                          /* position below the icon */
+			  left: 50%;                          /* center horizontally */
+			  transform: translateX(-50%) translateY(8px);  /* add a bit of spacing */
+			  background-color: rgba(0, 0, 0, 0);
+			  color: white;
+			  padding: 2px 8px;
+			  font-size: 0.9rem;
+			  border-radius: 4px;
+			  white-space: nowrap;
+			  z-index: 5;
+			  pointer-events: none;
+			}
             .tooltip:hover .tooltiptext,
             .tooltip:focus-within .tooltiptext {
-                visibility: visible;
-                opacity: 1;
+                visibility: hidden;
+                opacity: 0;
             }
             @media (hover: none) {
                 .tooltip .tooltiptext {
@@ -145,13 +135,16 @@
 
             /* Horizontal tech scroller */
             .tech-scroller {
-                overflow-x: hidden;
-                overflow-y: clip;
-                position: relative;
-                width: 100%;
-                padding: 1rem 0;
-            }
+			  overflow-x: hidden;
+			  overflow-y: visible;
+			  position: relative;
+			  width: 100%;
+			  height: 15%;
+			  padding: 1rem 1rem;
+			}
+
             .tech-track {
+            	overflow: visible;
                 display: flex;
                 align-items: center;
                 animation: scroll 30s linear infinite;
@@ -171,6 +164,10 @@
                     padding-top: 1rem;
                 }
             }
+
+			#sep {
+				height: 60%
+			}
 		</style>
 
 	</head>
@@ -194,37 +191,14 @@
 				<!--<li><a href="#elements">Elements</a></li>-->
 			</ul>
 		</nav>
+
 	</header>
 
 				<!-- Main -->
 					<div id="main">
+
 						<article id="about">
 							<h2 class="major">About</h2>
-							<div class="tech-scroller">
-								<div class="tech-track">
-									<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
-									<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
-									<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
-									<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
-									<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
-									<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
-									<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
-									<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
-
-									<!-- Duplicate for smooth looping -->
-									<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
-									<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
-									<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
-									<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
-									<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
-									<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
-									<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
-									<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
-								</div>
-							</div>
-
-
-
 							<!--							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
 							<p><strong>Strategic Engineer. Trusted Problem-Solver.</strong></p>
 							<p>I’m a senior software engineer with over a decade of experience delivering high-impact, scalable solutions across cloud-native architectures, modern infrastructure, and enterprise systems.</p>
@@ -530,13 +504,37 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					</div>
 
+				<div id="sep"></div>
+				<div class="tech-scroller">
+					<div class="tech-track">
+						<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
+						<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
+						<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
+						<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
+						<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
+						<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
+						<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
+						<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
+
+						<!-- Duplicate for smooth looping -->
+						<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
+						<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
+						<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
+						<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
+						<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
+						<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
+						<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
+						<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
+					</div>
+				</div>
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Caylin John Naidoo. <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
 
 
 			</div>
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy; Caylin John Naidoo. <a href="https://html5up.net">HTML5 UP</a>.</p>
-		</footer>
+
 		<!-- BG -->
 			<div id="bg"></div>
 
