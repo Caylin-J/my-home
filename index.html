@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <!--
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,6 +7,7 @@
 -->
 <html>
 	<head>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6299VCP8S"></script>
 		<script>
@@ -20,79 +22,189 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#header .content p {
+                text-transform: none !important;
+                text-align: justify;
+                text-align-last: center;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 600px;
+                font-family: Roboto;
+            }
+			/* SCROLLER CONTAINER */
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px;
+}
+
+.tooltip img {
+  height: 50px;
+  width: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tooltip box ABOVE icon */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%; /* Sit directly above the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px); /* raise it slightly */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Show tooltip on hover/focus */
+.tooltip:hover .tooltiptext,
+.tooltip:focus-within .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* TOOLTIP PLACEMENT ON MOBILE */
+@media (hover: none) {
+  .tooltip .tooltiptext {
+    bottom: auto;
+    top: 110%;
+  }
+}
+
+/* CUSTOM COLORED TOOLTIP BACKGROUNDS */
+.tooltip.java .tooltiptext { background-color: #b07219; }
+.tooltip.spring .tooltiptext { background-color: #6db33f; }
+.tooltip.aws .tooltiptext { background-color: #232f3e; }
+.tooltip.terraform .tooltiptext { background-color: #5c4ee5; }
+.tooltip.kafka .tooltiptext { background-color: #231f20; }
+.tooltip.docker .tooltiptext { background-color: #2496ed; }
+.tooltip.postgresql .tooltiptext { background-color: #336791; }
+.tooltip.camunda .tooltiptext { background-color: #f23c3c; }
+/* SCROLLER CONTAINER */
+.tech-scroller {
+  overflow-x: hidden;
+  overflow-y: clip; /* prevent vertical scrollbar but allow tooltips */
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+/* SCROLLING TRACK */
+.tech-track {
+  display: flex;
+  align-items: center;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+/* FADE IN AND OUT EFFECT */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Caylin John Naidoo</h1>
-								<p>Senior Software Engineer A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+	<!-- Header -->
+	<header id="header">
+		<div class="content">
+			<div class="inner">
+				<h1>Caylin John Naidoo</h1>
+				<p>+10 years building complex systems end-to-end — with a focus on scalability, maintainability, business value, and long-term strategic impact.</p>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<!--<li><a href="#elements">Elements</a></li>-->
+			</ul>
+		</nav>
+	</header>
 
 				<!-- Main -->
 					<div id="main">
+						<article id="about">
+							<h2 class="major">About</h2>
+							<div class="tech-scroller">
+								<div class="tech-track">
+									<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
+									<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
+									<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
+									<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
+									<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
+									<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
+									<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
+									<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
+									<!-- Duplicate for smooth looping -->
+									<div class="tooltip"><img src="icons/java.svg" alt="Java" /><span class="tooltiptext">Java</span></div>
+									<div class="tooltip"><img src="icons/spring-icon.svg" alt="Spring Boot" /><span class="tooltiptext">Spring Boot</span></div>
+									<div class="tooltip"><img src="icons/aws.svg" alt="AWS" /><span class="tooltiptext">Amazon Web Services</span></div>
+									<div class="tooltip"><img src="icons/terraform-icon.svg" alt="Terraform" /><span class="tooltiptext">Terraform</span></div>
+									<div class="tooltip"><img src="icons/kafka-icon.svg" alt="Kafka" /><span class="tooltiptext">Apache Kafka</span></div>
+									<div class="tooltip"><img src="icons/docker-icon.svg" alt="Docker" /><span class="tooltiptext">Docker</span></div>
+									<div class="tooltip"><img src="icons/postgresql.svg" alt="PostgreSQL" /><span class="tooltiptext">PostgreSQL</span></div>
+									<div class="tooltip"><img src="icons/camunda.png" alt="Camunda" /><span class="tooltiptext">Camunda</span></div>
+								</div>
+							</div>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
+
+							<!--							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
+							<p><strong>Strategic Engineer. Trusted Problem-Solver.</strong></p>
+							<p>I’m a senior software engineer with over a decade of experience delivering high-impact, scalable solutions across cloud-native architectures, modern infrastructure, and enterprise systems.</p>
+							<p>With a background in computer engineering and a proven record in fintech and platform development, I specialize in aligning technical execution with strategic business outcomes.</p>
+							<p>I lead with a balance of deep technical craft, pragmatic problem-solving, and a focus on quality and maintainability.
+							From designing robust backend services to mentoring teams and driving DevOps maturity, I take ownership of delivery in fast-paced environments.
+							I thrive where engineering meets impact — building systems that evolve with business needs while keeping performance, resilience, and user experience at the core.</p>
+						</article>
+
+<!--						&lt;!&ndash; About &ndash;&gt;-->
+<!--						<article id="about">-->
+<!--							<h2 class="major">About</h2>-->
+<!--							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
+<!--							<p><strong>Strategic Engineer. Trusted Problem-Solver.</strong></p>-->
+<!--							<p>With over a decade of experience designing scalable systems and defining technical strategy, I consistently deliver high-impact solutions that balance deep technical insight with real business value. I thrive in complex environments, where ownership, initiative, and precision matter most. My strongest contributions span five key areas:</p>-->
+
+<!--							<p><strong>Cloud, DevOps & Modern Infrastructure</strong><br>-->
+<!--								I specialize in setting up and scaling production-ready cloud environments, with deep experience on AWS. From infrastructure-as-code using Terraform to complex migrations with Control Tower, IAM Roles Anywhere, and Kerberos authentication, I ensure systems are automated, secure, and maintainable. I’ve implemented full-stack observability with tools like Prometheus, Grafana, and Kafka exporters — and I’ve stepped into ops-heavy roles when needed to drive delivery across the line.</p>-->
+
+<!--							<p><strong>System Design & Process Orchestration</strong><br>-->
+<!--								I bring strong architectural thinking and lead the design of robust, service-oriented systems. My expertise in Camunda has been instrumental in solving complex orchestration and decisioning needs — including initiatives others couldn’t unblock. I’ve designed and implemented cross-cutting systems, like the OCEP email solution, from the ground up. I work fluently with Java, Spring Boot, Microservices, and Kafka to build scalable, maintainable platforms.</p>-->
+
+<!--							<p><strong>Delivering Business Value & Reliability</strong><br>-->
+<!--								I’m known for consistent, high-quality delivery and strong ownership. I focus on unblocking value for the business — ensuring priorities are aligned, deadlines are met, and systems are reliable. I’ve built a reputation for stepping up under pressure, driving critical initiatives forward, and enabling customer success. I don’t just meet expectations; I raise the bar.</p>-->
+
+<!--							<p><strong>Technical Leadership & Mentorship</strong><br>-->
+<!--								As a senior contributor, I guide others through code quality, design patterns, and delivery practices. I introduced SonarQube quality gates to streamline PR workflows and ensure clean, maintainable code. I mentor engineers across levels, encourage accountability, and foster growth through collaboration. I lead without ego, and my calm, clear communication helps teams align and stay focused.</p>-->
+
+<!--							<p><strong>Pragmatic Problem Solving</strong><br>-->
+<!--								I approach challenges with a wide lens — spotting risks early, strategizing under ambiguity, and offering thoughtful alternatives. Whether navigating incomplete requirements or rethinking designs, I solve problems with clarity, pragmatism, and precision. My mindset is rooted in continuous improvement, and I treat every challenge as a chance to refine systems, processes, and outcomes.</p>-->
+<!--						</article>-->
 
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-<!--								<form-->
-<!--										action="https://formspree.io/f/xnnvakeb"-->
-<!--										method="POST"-->
-<!--								>-->
-<!--									<label>-->
-<!--										Your email:-->
-<!--										<input type="email" name="email">-->
-<!--									</label>-->
-<!--									<label>-->
-<!--										Your message:-->
-<!--										<textarea name="message"></textarea>-->
-<!--									</label>-->
-<!--									&lt;!&ndash; your other form fields go here &ndash;&gt;-->
-<!--									<button type="submit">Send</button>-->
-<!--								</form>-->
 								<form method="post" action="https://formspree.io/f/xnnvakeb">
 									<div class="fields">
 										<div class="field half">
@@ -114,10 +226,8 @@
 									</ul>
 								</form>
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://za.linkedin.com/in/caylin-john-naidoo" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/Caylin-J" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
 
@@ -367,7 +477,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Caylin John Naidoo. <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
