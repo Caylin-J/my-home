@@ -140,11 +140,13 @@
 			}
 
             .tech-track {
-            	overflow: visible;
+            	overflow-x: hidden;
+			  	overflow-y: visible;
                 display: flex;
                 align-items: center;
                 animation: scroll 30s linear infinite;
                 width: max-content;
+                height: 100%
             }
             @keyframes scroll {
                 0% { transform: translateX(0); }
@@ -162,7 +164,7 @@
             }
 
 			#sep {
-				height: 60%
+				height: 30%
 			}
 
 			body.is-article-visible .tech-scroller {
@@ -523,9 +525,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					<style>
 						#map {
-                          height: 300px;
-                          width: 30%;
-                          margin: 2rem auto;
+                          height: 400px;
+                          width: 400px;
+                          margin: 2rem 2rem;
                           border-radius: 12px;
                         }
 					</style>
