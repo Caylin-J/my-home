@@ -99,20 +99,23 @@
                 z-index: 1;
             }
             .tooltip .tooltiptext {
-			  visibility: visible;
-			  opacity: 1;
-			  position: absolute;
-			  top: 100%;                          /* position below the icon */
-			  left: 50%;                          /* center horizontally */
-			  transform: translateX(-50%) translateY(8px);  /* add a bit of spacing */
-			  background-color: rgba(0, 0, 0, 0);
-			  color: white;
-			  padding: 2px 8px;
-			  font-size: 0.9rem;
-			  border-radius: 4px;
-			  white-space: nowrap;
-			  z-index: 5;
-			  pointer-events: none;
+				visibility: visible;
+				opacity: 1;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%) translateY(8px);
+				background-color: rgba(0, 0, 0, 0);
+				color: white;
+				padding: 4px 10px;
+				font-size: 0.8rem;
+				border-radius: 4px;
+				white-space: normal;
+				text-align: center;
+				max-width: 120px;
+				line-height: 1.4;
+				z-index: 5;
+				pointer-events: none;
 			}
             .tooltip:hover .tooltiptext,
             .tooltip:focus-within .tooltiptext {
@@ -135,13 +138,13 @@
             /* Horizontal tech scroller */
             .tech-scroller {
             	font-family: "Press Start 2P";
-            	font-size: 0.1rem;
-				position: relative;
-				width: 70%;           /* limit visible scroll width */
-				overflow-x: visible;   /* ⬅️ clip horizontally */
-				overflow-y: visible;  /* ⬅️ allow vertical escape */
-				margin: 2rem auto 4rem auto;  /* ⬅️ Add spacing above & below */
-				padding: 5rem 0;              /* ⬅️ Prevent clipping from icons/tooltips */
+            	font-size: 0.1;
+				position: justified;
+				width: 100%;           /* limit visible scroll width */
+				overflow-x: hidden;   /* ⬅️ clip horizontally */
+				overflow-y: hidden;  /* ⬅️ allow vertical escape */
+				margin: 1px 50px 1px 1px;  /* ⬅️ Add spacing above & below */
+				padding: 10rem 0;              /* ⬅️ Prevent clipping from icons/tooltips */
 			}
 
             .tech-track {
@@ -191,10 +194,9 @@
 			@media (max-width: 768px) {
 				.tooltip .tooltiptext {
 					transform: translateX(-50%) translateY(8px);
-					font-size: 0.75rem;
-					white-space: normal; /* allow line break */
-					width: max-content;
-					max-width: 120px;
+					font-size: 0.7rem;
+					white-space: normal;
+					max-width: 150px;
 					text-align: center;
 				}
 			}
