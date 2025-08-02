@@ -141,7 +141,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Press Start 2P", sans-serif;
+		font-family: "Poppins", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -262,7 +262,7 @@ input, select, textarea {
 	code {
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
-		font-family: "Press Start 2P", monospace;
+		font-family: "Poppins", monospace;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -270,7 +270,7 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Press Start 2P", monospace;
+		font-family: "Poppins", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
 	}
@@ -506,7 +506,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: "Press Start 2P";
+				font-family: "Poppins";
 				font-weight: 900;
 			}
 
@@ -615,7 +615,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: "Press Start 2P";
+			font-family: "Poppins";
 			font-weight: 400;
 		}
 
@@ -632,7 +632,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: "Press Start 2P";
+			font-family: "Poppins";
 		}
 
 /* Image */
@@ -1158,7 +1158,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/background.gif");
+			background-image: url("../../images/live.mp4");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
