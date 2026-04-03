@@ -1581,7 +1581,9 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(35, 55, 85, 0.80);
+			max-height: 90vh;
+			overflow-y: auto;
+			background-color: rgba(35, 55, 85, 0.70);
 			border: 1px solid rgba(255, 255, 255, 0.1);
 			border-radius: 4px;
 			opacity: 0;
