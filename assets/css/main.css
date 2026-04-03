@@ -2225,3 +2225,100 @@ body.is-article-visible .tech-stack-showcase {
 	border-radius: 12px;
 	align-items: center;
 }
+
+/* Companies Showcase Styles - Animated Scroller */
+.companies-showcase {
+	font-family: "Poppins";
+	padding: 1.5rem 1rem;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.companies-header {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.companies-header h3 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #ffffff;
+	margin: 0;
+	letter-spacing: 0.05rem;
+	opacity: 0.9;
+}
+
+.companies-scroller-wrapper {
+	overflow: hidden;
+	width: 100%;
+}
+
+.companies-scroller {
+	display: flex;
+	gap: 3rem;
+	width: max-content;
+	transform: translateX(0);
+}
+
+.companies-scroller.animated {
+	animation: scrollCompanies 30s linear infinite;
+}
+
+.companies-scroller:hover {
+	animation-play-state: paused;
+}
+
+@keyframes scrollCompanies {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.company-logo {
+	height: 50px;
+	width: auto;
+	max-width: 180px;
+	flex-shrink: 0;
+	opacity: 0.85;
+	transition: opacity 0.3s ease;
+}
+
+.company-logo:hover {
+	opacity: 1;
+}
+
+/* Hide companies when article modal is open */
+body.is-article-visible .companies-showcase {
+	display: none !important;
+}
+
+/* Companies Responsive */
+@media (max-width: 768px) {
+	.company-logo {
+		height: 40px;
+		max-width: 140px;
+	}
+	
+	.companies-scroller.animated {
+		animation-duration: 15s;
+	}
+}
+
+@media (max-width: 480px) {
+	.companies-showcase {
+		padding: 1.5rem 0.5rem;
+	}
+	
+	.company-logo {
+		height: 35px;
+		max-width: 120px;
+	}
+	
+	.companies-header h3 {
+		font-size: 1rem;
+	}
+}
