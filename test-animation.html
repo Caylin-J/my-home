@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		#bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			z-index: -1;
+		}
+
+		#bg:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url("./images/bg_old.jpg");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: 1;
+			-moz-transform: scale(1.125);
+			-webkit-transform: scale(1.125);
+			-ms-transform: scale(1.125);
+			transform: scale(1.125);
+			-webkit-animation: subtleBgMotion 20s ease-in-out infinite;
+			animation: subtleBgMotion 20s ease-in-out infinite;
+		}
+
+		@-webkit-keyframes subtleBgMotion {
+			0%, 100% {
+				-webkit-transform: scale(1.125);
+				filter: brightness(1.0);
+			}
+			50% {
+				-webkit-transform: scale(1.15);
+				filter: brightness(1.05);
+			}
+		}
+
+		@keyframes subtleBgMotion {
+			0%, 100% {
+				-moz-transform: scale(1.125);
+				-webkit-transform: scale(1.125);
+				-ms-transform: scale(1.125);
+				transform: scale(1.125);
+				filter: brightness(1.0);
+			}
+			50% {
+				-moz-transform: scale(1.15);
+				-webkit-transform: scale(1.15);
+				-ms-transform: scale(1.15);
+				transform: scale(1.15);
+				filter: brightness(1.05);
+			}
+		}
+
+		.info {
+			position: relative;
+			z-index: 10;
+			color: white;
+			padding: 20px;
+			background: rgba(0,0,0,0.7);
+			border-radius: 8px;
+			margin: 20px;
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="bg"></div>
+	<div class="info">
+		<h2>Background Animation Test</h2>
+		<p>The background should smoothly zoom in and out with a 20-second cycle.</p>
+		<p>You should see subtle motion in the background image.</p>
+	</div>
+</body>
+</html>
+
