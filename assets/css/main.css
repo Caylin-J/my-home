@@ -1722,18 +1722,9 @@ html, body {
 	width: 100%;
 	flex: 1;
 	flex-grow: 1;
-	overflow-y: auto;
+	overflow-y: visible;
 	padding-bottom: 4rem;
 	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-/* Allow articles to scroll on mobile */
-#main article {
-	max-height: 90vh;
-	overflow-y: auto;
 }
 
 #footer {
@@ -1869,39 +1860,6 @@ body.is-article-visible .tech-scroller {
 		white-space: normal;
 		max-width: 150px;
 		text-align: center;
-	}
-
-	#main article {
-		max-height: calc(100vh - 8rem);
-		overflow-y: auto;
-	}
-
-	#wrapper {
-		padding: 1rem 0.5rem 0;
-	}
-
-	#main {
-		padding-bottom: 2rem;
-	}
-}
-
-@media (max-width: 480px) {
-	#main article {
-		max-height: calc(100vh - 6rem);
-		overflow-y: auto;
-		padding: 3rem 1rem 1rem 1rem !important;
-	}
-
-	#main article h2.major {
-		margin-bottom: 1rem;
-	}
-
-	#wrapper {
-		padding: 0.5rem 0.25rem 0;
-	}
-
-	#main {
-		padding-bottom: 1rem;
 	}
 }
 

@@ -103,12 +103,6 @@
 							// Activate article.
 								$article.addClass('active');
 
-							// Allow scrolling on mobile
-								if ($(window).width() <= 768) {
-									$('html, body').css('overflow', 'auto');
-									$article.scrollTop(0);
-								}
-
 							// Unlock.
 								locked = false;
 
@@ -145,12 +139,6 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
-
-										// Allow scrolling on mobile
-											if ($(window).width() <= 768) {
-												$('html, body').css('overflow', 'auto');
-												$article.scrollTop(0);
-											}
 
 										// Window stuff.
 											$window
@@ -190,12 +178,6 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
-
-										// Allow scrolling on mobile
-											if ($(window).width() <= 768) {
-												$('html, body').css('overflow', 'auto');
-												$article.scrollTop(0);
-											}
 
 										// Window stuff.
 											$window
@@ -250,9 +232,6 @@
 							// Unmark as visible.
 								$body.removeClass('is-article-visible');
 
-							// Restore no-scroll on mobile
-								$('html, body').css('overflow', 'hidden');
-
 							// Unlock.
 								locked = false;
 
@@ -289,9 +268,6 @@
 							setTimeout(function() {
 
 								$body.removeClass('is-article-visible');
-
-								// Restore no-scroll on mobile
-									$('html, body').css('overflow', 'hidden');
 
 								// Window stuff.
 									$window
