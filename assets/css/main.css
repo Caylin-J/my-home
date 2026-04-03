@@ -696,26 +696,31 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 2.5rem 0;
-			width: 100%;
+			margin: 0 auto 2rem;
+			max-width: 100%;
+			height: auto;
 		}
+
+		.image.main img {
+			width: 100%;
+			height: auto;
+			max-width: 300px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		@media (max-width: 768px) {
 
 			.image.main img {
-				width: 100%;
-			}
-
-		@media screen and (max-width: 736px) {
-
-			.image.main {
-				margin: 2rem 0;
+				max-width: 250px;
 			}
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media (max-width: 480px) {
 
-			.image.main {
-				margin: 1.5rem 0;
+			.image.main img {
+				max-width: 200px;
 			}
 
 		}
