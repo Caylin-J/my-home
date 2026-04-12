@@ -8,12 +8,58 @@
     visibility: visible !important;
 }
 
-/* Force companies section visible - override the hide rule */
-body .companies-showcase,
-body.is-article-visible .companies-showcase {
+/* Show companies ONLY on main screen (when NO article is visible) */
+body:not(.is-article-visible) .companies-showcase {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Hide companies when article IS visible (About/Contact open) */
+body.is-article-visible .companies-showcase {
+    display: none !important;
+}
+
+/* Ensure companies show on main screen - position in flex layout */
+#companies {
+    order: 5 !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* Tech stack should also be properly ordered and visible on main screen only */
+.tech-stack-showcase {
+    order: 4 !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* Ensure wrapper allows scrolling to see companies */
+body:not(.is-article-visible) #wrapper {
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+}
+
+/* Show tech stack ONLY on main screen */
+body:not(.is-article-visible) .tech-stack-showcase {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Hide tech stack when article IS visible */
+body.is-article-visible .tech-stack-showcase {
+    display: none !important;
 }
 
 .companies-scroller {
@@ -21,9 +67,10 @@ body.is-article-visible .companies-showcase {
     visibility: visible !important;
 }
 
-/* Temporarily disable animation for debugging */
-.companies-scroller.animated {
-    animation: none !important;
+/* Force tech categories to display one per line */
+.tech-categories {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
 }
 
 /* Remove boxes from tech items */
