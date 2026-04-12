@@ -1,0 +1,46 @@
+/* Override styles - Company logos visibility */
+.company-logo {
+    height: 40px !important;
+    width: auto !important;
+    max-width: 140px !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Force companies section visible - override the hide rule */
+body .companies-showcase,
+body.is-article-visible .companies-showcase {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.companies-scroller {
+    display: flex !important;
+    visibility: visible !important;
+}
+
+/* Temporarily disable animation for debugging */
+.companies-scroller.animated {
+    animation: none !important;
+}
+
+/* Remove boxes from tech items */
+.tech-item.primary-skill {
+    background: none !important;
+    border: none !important;
+    padding: 1rem !important;
+}
+
+.tech-grid.secondary .tech-item {
+    background: none !important;
+    border: none !important;
+    padding: 0.75rem !important;
+}
+
+/* Fixed background */
+#bg {
+    position: fixed !important;
+    background-attachment: fixed !important;
+}
