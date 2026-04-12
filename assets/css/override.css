@@ -59,6 +59,66 @@ body:not(.is-article-visible) .tech-stack-showcase {
     opacity: 1 !important;
 }
 
+/* Tech group - main icon with text badges for related services */
+.tech-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.tech-group-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.tech-group-main img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: contain !important;
+}
+
+.tech-group-main .tech-name {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    margin-top: 0.3rem !important;
+}
+
+.tech-group-services {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+}
+
+.tech-badge {
+    display: inline-block !important;
+    padding: 0.2rem 0.5rem !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    white-space: nowrap !important;
+}
+
+/* Simple text-only tech items for misc skills */
+.tech-text-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem 1rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
 /* Hide tech stack when article IS visible */
 body.is-article-visible .tech-stack-showcase {
     display: none !important;
