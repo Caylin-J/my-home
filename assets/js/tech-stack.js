@@ -4,12 +4,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryHeaders = document.querySelectorAll('.category-header');
     
     categoryHeaders.forEach(header => {
-        // Support both click and touch events for mobile
-        const handleInteraction = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        // Track touch start for swipe detection
+        header.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, {passive: true});
+        
+        // Track touch move
+        header.addEventListener('touchmove', function(e) {
+            touchEndY = e.touches[0].clientY;
+        }, {passive: true});
+        
+        // Handle click (desktop)
+        header.addEventListener('click', function(e) {
+            handleToggle(this);
+        });
+        
+        // Handle touch end (mobile) - only toggle if not scrolling
+        header.addEventListener('touchend', function(e) {
+            const swipeThreshold = 10; // pixels
+            const swipeDistance = Math.abs(touchEndY - touchStartY);
             
-            const category = this.closest('.tech-category.expandable');
+            // Only toggle if user didn't scroll significantly
+            if (swipeDistance < swipeThreshold) {
+                e.preventDefault();
+                handleToggle(this);
+            }
+        });
+        
+        function handleToggle(headerEl) {
+            const category = headerEl.closest('.tech-category.expandable');
             const isExpanded = category.classList.contains('expanded');
             
             // Close all other categories
@@ -20,15 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Toggle current category
-            if (!isExpanded) {
-                category.classList.add('expanded');
-            } else {
-                category.classList.remove('expanded');
-            }
-        };
-        
-        header.addEventListener('click', handleInteraction);
-        header.addEventListener('touchstart', handleInteraction, {passive: false});
+            category.classList.toggle('expanded', !isExpanded);
+        }
     });
     
     // Add hover effects for secondary tech items
