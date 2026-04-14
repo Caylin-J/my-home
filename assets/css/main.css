@@ -1979,7 +1979,7 @@ body::-webkit-scrollbar {
 	bottom: calc(100% + 15px);
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(0, 0, 0, 0.95);
+	background: rgba(34, 48, 66, 1);
 	color: white;
 	padding: 1rem;
 	border-radius: 8px;
