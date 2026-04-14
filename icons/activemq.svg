@@ -1,1 +1,32 @@
-File not found: /v1/AUTH_mw/wikipedia-commons-local-public.e8/e/e8/Apache_ActiveMQ_Logo.svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 172" width="210" height="172">
+  <!-- Blue gradient background -->
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004499;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Blue background shape -->
+  <path d="M 20 20 Q 20 10 30 10 L 180 10 Q 190 10 190 20 L 190 152 Q 190 162 180 162 L 30 162 Q 20 162 20 152 Z" 
+        fill="url(#blueGradient)" stroke="#003366" stroke-width="2"/>
+  
+  <!-- White "Active" text -->
+  <text x="105" y="65" font-family="Arial, sans-serif" font-size="28" font-weight="bold" 
+        text-anchor="middle" fill="white">Active</text>
+  
+  <!-- White "MQ" text with larger font -->
+  <text x="105" y="100" font-family="Arial, sans-serif" font-size="36" font-weight="bold" 
+        text-anchor="middle" fill="white">MQ</text>
+  
+  <!-- Small Apache feather icon -->
+  <g transform="translate(85, 115)">
+    <path d="M 0 0 Q 5 -2 10 0 Q 15 2 20 0 Q 25 -2 30 0 Q 35 2 40 0" 
+          stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+    <circle cx="20" cy="5" r="2" fill="white" opacity="0.8"/>
+  </g>
+  
+  <!-- Bottom text -->
+  <text x="105" y="145" font-family="Arial, sans-serif" font-size="10" 
+        text-anchor="middle" fill="white" opacity="0.9">Apache ActiveMQ</text>
+</svg>
